@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 //define mongodb url
-// const mongoURL = process.env.MONGODB_URL_LOCAL;
+console.log("correct");
 const mongoURL = process.env.MONGODB_URL;
-//   "mongodb+srv://kashishshah627:Mca45042@hotel.kjcfk.mongodb.net/";
+// const mongoURL = process.env.MONGODB_URL_LOCAL;
 //setup mongoose connection
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
@@ -20,7 +20,7 @@ db.on("disconnected", () => {
   console.log("disconnected to mongo server");
 });
 db.on("error", (err) => {
-  console.log("connected to mongo server", err);
+  console.log("error found", err);
 });
 
 module.exports = db;
